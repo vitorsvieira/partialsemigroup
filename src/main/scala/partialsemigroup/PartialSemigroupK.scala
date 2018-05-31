@@ -56,7 +56,7 @@ object PartialSemigroupK{
     override def combineMaybeK[A](x: Either[L, A], y: Either[L, A]): Option[Either[L, A]] =
       (x,y) match {
         case (Left(xl), Left(yl))   => L.combineMaybe(xl, yl).map(Left.apply)
-        case (Right(xr), Right(yr)) => ??? // R.combineMaybe(xr, yr).map(Right.apply) //  How to provide R in scope without tunneling ev.
+        case (Right(xr), Right(yr)) => ??? // R.combineMaybe(xr, yr).map(Right.apply)
         case (_, _)                 => None
       }
   }
